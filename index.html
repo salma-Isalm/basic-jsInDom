@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Tour of DOM</title>
+    <style>
+   .Fruits-Container   li{
+            color: tomato;
+            font-weight: bolder;
+        }
+        #Fruits-title{
+            color: black;
+        }
+        .Important-place{
+        color: rgb(72, 72, 27);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wellcome To My DOM</h1>
+    </header>
+
+    <main id="main-container">
+
+        <section id="dscpt">
+            <h1>My awesome DOM</h1>
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, ducimus voluptates nostrum maiores ullam, quos est nam perspiciatis hic culpa cumque rerum magni vero sit recusandae officia, ipsum illo saepe.</p>
+             <ul>
+                <li>DOM1</li>
+                <li>DOM2</li>
+                <li>DOM3</li>
+                
+             </ul>
+         </section>
+
+       <section >
+
+        <h1>Type of Name</h1>
+        <ul id="name-list">
+            <li>SALMA</li>
+            <li>SAIF</li>
+            <li>SAYED</li>
+          </ul>
+       </section>
+
+       <section class="Fruits-Container">
+        <h1 id="Fruits-title"  class=" blue-bg  random-class basic-class">Fruits I like</h1>
+        <ul>
+            <li>Apple</li>
+            <li>Mango</li>
+            <li>Banana</li>
+            <li>Jack-fruit</li>
+            <li>Lichi</li>
+        </ul>
+       </section>
+
+       <section id="places-container"  class="large-text">
+        <h1 id="place-title" class=" blue bg random somelass ">Plase I like to visit</h1>
+        <ul>
+            <li class="Important-place">SunsorBon</li>
+            <li class="Important-place">BandorBon</li>
+            <li class="Important-place">ShalBon</li>
+            <li>KataBon</li>
+        </ul>
+       </section>
+
+    </main>
+    <script src="js/dom.js"></script>
+    <script src="js/append.js"></script>
+    <script src="js/styleInJS.js"></script>
+    <script>
+        const student = {
+            name:'Salma' ,
+            id : 2340 ,
+            dept: 'cmt' , 
+            study: function (time){
+                //console.log(time , 'study time')
+            }
+
+            
+        }
+       // console.log('document object model')
+
+    //    option :1  ---> getElementByTagsName
+
+        const liCollection = document.getElementsByTagName('li');
+       // console.log(liCollection)
+       for(const li of liCollection){
+        //console.log(li.innerText);
+       }
+       const alHeading = document.getElementsByTagName('h1');
+       for(const h1 of alHeading){
+        //console.log(h1.innerText)
+       }
+
+         //    option :2  ---> getElementByIdName
+       const fruitsTitle = document.getElementById('Fruits-title')
+       fruitsTitle.innerText = 'fruits title change';
+
+
+          //    option :3  --->getElementsByClassName
+       const places= document.getElementsByClassName('Important-place')
+       //console.log(places)
+       for(const place of places){
+       // console.log(place.innerText)
+       }
+
+       //option: 4----->    quarySelector
+       //option: 5 ----->    quarySelectorAll
+
+       const someLi = document.querySelectorAll('.Fruits-Container');
+      // console.log(someLi)
+      for(li of someLi){
+        console.log(li.innerText)
+      }
+         </script>
+</body>
+</html>
